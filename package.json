@@ -1,0 +1,79 @@
+{
+  "name": "ftscreen",
+  "private": true,
+  "scripts": {
+    "build": "yarn clean && NODE_ENV=production webpack",
+    "clean": "rm -rf build/",
+    "lint-fix": "tslint --project tsconfig.json --fix; yarn prettier --write",
+    "lint": "tsc --project tsconfig.json --noEmit && tslint --project tsconfig.json && yarn prettier --list-different",
+    "prettier": "prettier '*.{js,json}' 'src/**/*.{ts,tsx,json,i18n}'",
+    "start": "NODE_ENV=development webpack-dev-server",
+    "test": "jest",
+    "webpack-stats": "yarn build && webpack-bundle-analyzer build/webpack-stats.json build/"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.9",
+    "@types/react": "^16.8.5",
+    "@types/react-dom": "^16.0.11",
+    "emotion": "^10.0.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-emotion": "^10.0.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.1.0",
+    "prettier": "^1.15.2",
+    "raw-loader": "^3.0.0",
+    "react-testing-library": "^8.0.1",
+    "sw-precache-webpack-plugin": "^0.11.5",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.13.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.1.6",
+    "webpack": "^4.29.6",
+    "webpack-bundle-analyzer": "^3.0.4",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/**/__tests__/**/*.test.ts?(x)"
+    ],
+    "moduleNameMapper": {
+      "\\.svg$": "identity-obj-proxy"
+    },
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text-summary"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts",
+      "tsx"
+    ]
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "yarn": ">=1.10.0"
+  }
+}

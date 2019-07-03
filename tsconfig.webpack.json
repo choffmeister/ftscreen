@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["index.ts", "src/**/*"],
+  "exclude": ["**/__tests__/*"],
+  "compilerOptions": {
+    "jsx": "preserve",
+    "module": "esnext",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "target": "esnext"
+  }
+}

@@ -1,0 +1,48 @@
+
+{
+  "presets": [
+    "@babel/react",
+    [
+      "@babel/env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": [
+            "last 2 chrome versions",
+            "last 2 firefox versions",
+            "last 2 edge versions",
+            "last 2 ios versions",
+            "last 2 safari versions",
+            "last 2 chromeAndroid versions"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "syntax-dynamic-import"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        [
+          "emotion",
+          {
+            "autoLabel": false
+          }
+        ]
+      ]
+    },
+    "development": {
+      "plugins": [
+        [
+          "emotion",
+          {
+            "autoLabel": true,
+            "labelFormat": "--[filename]-[local]"
+          }
+        ]
+      ]
+    }
+  }
+}

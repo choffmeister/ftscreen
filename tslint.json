@@ -1,0 +1,16 @@
+{
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "rules": {
+    "max-classes-per-file": false,
+    "no-empty-interface": false,
+    "no-empty": false,
+    "interface-name": [true, "never-prefix"],
+    "no-implicit-dependencies": [true, "dev"],
+    "no-object-literal-type-assertion": false,
+    "no-shadowed-variable": false,
+    "no-submodule-imports": true,
+    "no-var-requires": false,
+    "object-literal-sort-keys": false,
+    "variable-name": false
+  }
+}
